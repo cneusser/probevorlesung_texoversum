@@ -3,8 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Change Management in Fashion Business — Deep Dive | Dr. Christian Neusser</title>
-<meta name="description" content="Companion deep-dive to the Probevorlesung at TEXOVERSUM, Reutlingen University. Four generations of organisational change theory plus MSTM, applied to the fashion industry.">
+
+<title>Change Management in Fashion Business — Probevorlesung Companion · Dr. Christian Neusser</title>
+<meta name="description" content="Companion deep-dive to the Probevorlesung at TEXOVERSUM, Reutlingen University. Four generations of organisational change theory plus the MSTM framework, applied to the fashion industry — with original figures from doctoral research at Henley Business School.">
+<meta name="author" content="Dr. Christian Neusser">
+<meta name="keywords" content="change management, fashion business, MSTM, family business, succession, organisational change, Lewin, Kotter, Weick, Hannan, V. Fraas, Henley, TEXOVERSUM, Reutlingen">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Change Management in Fashion Business — Probevorlesung Companion">
+<meta property="og:description" content="From Lewin to MSTM — and what V. Fraas teaches us about transformation under governance pressure. Companion to the Probevorlesung at TEXOVERSUM, Reutlingen University.">
+<meta property="og:url" content="https://cneusser.github.io/probevorlesung_texoversum/">
+<meta property="og:site_name" content="Christian Neusser · Probevorlesung Companion">
+<meta property="og:image" content="https://cneusser.github.io/probevorlesung_texoversum/assets/mstm_framework_thesis.png">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Change Management in Fashion Business — Probevorlesung Companion">
+<meta name="twitter:description" content="From Lewin to MSTM — and what V. Fraas teaches us about transformation under governance pressure.">
+<meta name="twitter:image" content="https://cneusser.github.io/probevorlesung_texoversum/assets/mstm_framework_thesis.png">
+
+<!-- Favicon (inline SVG) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231B2A4E'/%3E%3Ctext x='50' y='66' font-family='Georgia,serif' font-size='52' font-weight='700' text-anchor='middle' fill='%23E6CBA1'%3EM%3C/text%3E%3C/svg%3E">
+
 <style>
 :root {
   --navy: #1B2A4E;
@@ -16,11 +37,16 @@
   --ink: #2C2C2C;
   --muted: #8B8680;
   --red: #A83D3D;
+  --green: #4A7C59;
   --white: #ffffff;
   --serif: Georgia, "Times New Roman", serif;
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --shadow-sm: 0 2px 6px rgba(14,23,48,0.08);
+  --shadow-md: 0 8px 24px rgba(14,23,48,0.12);
 }
+
 * { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 html, body { margin: 0; padding: 0; }
 body {
   font-family: var(--sans);
@@ -30,58 +56,87 @@ body {
   background: var(--cream);
   -webkit-font-smoothing: antialiased;
 }
-a { color: var(--navy); text-decoration: none; border-bottom: 1px solid var(--camel-lt); }
+a { color: var(--navy); text-decoration: none; border-bottom: 1px solid var(--camel-lt); transition: all .15s; }
 a:hover { color: var(--camel); border-bottom-color: var(--camel); }
-.container { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+img { max-width: 100%; height: auto; display: block; }
+.container { max-width: 920px; margin: 0 auto; padding: 0 24px; }
 
-/* HERO */
+/* ============ HERO ============ */
 .hero {
-  background: var(--navy-dark);
+  background: var(--navy-dark) linear-gradient(180deg, #0E1730 0%, #1B2A4E 100%);
   color: var(--cream);
-  padding: 96px 24px 64px;
+  padding: 88px 24px 72px;
   border-bottom: 8px solid var(--camel);
+  position: relative;
+  overflow: hidden;
 }
-.hero .container { max-width: 880px; }
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,150,90,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero .container { position: relative; }
 .hero .kicker {
   font-size: 12px;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   font-weight: 700;
   color: var(--camel-lt);
-  margin: 0 0 16px;
+  margin: 0 0 18px;
 }
 .hero h1 {
   font-family: var(--serif);
-  font-size: 56px;
+  font-size: 60px;
   font-weight: 700;
-  line-height: 1.1;
-  margin: 0 0 12px;
+  line-height: 1.05;
+  margin: 0 0 14px;
   color: var(--white);
+  letter-spacing: -0.01em;
 }
-.hero h1 em {
-  font-style: italic;
-  color: var(--cream);
-  font-weight: 400;
-}
+.hero h1 em { font-style: italic; color: var(--cream); font-weight: 400; }
 .hero p.lead {
   font-family: var(--serif);
   font-style: italic;
   font-size: 22px;
   line-height: 1.45;
   color: var(--cream);
-  margin: 0 0 36px;
+  margin: 0 0 32px;
   max-width: 720px;
 }
 .hero .meta {
   border-left: 4px solid var(--camel);
-  padding: 4px 0 4px 18px;
-  margin-top: 24px;
+  padding: 6px 0 6px 18px;
+  margin-top: 28px;
 }
-.hero .meta .name { font-weight: 700; font-size: 16px; color: var(--white); }
+.hero .meta .name { font-weight: 700; font-size: 17px; color: var(--white); }
 .hero .meta .org { font-size: 14px; color: var(--cream); margin-top: 4px; }
 .hero .meta .ctx { font-size: 12px; color: var(--camel-lt); margin-top: 4px; font-style: italic; }
+.hero .quick-links {
+  display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px;
+}
+.hero .quick-links a {
+  display: inline-block;
+  padding: 8px 16px;
+  background: rgba(200,150,90,0.18);
+  color: var(--camel-lt);
+  border: 1px solid rgba(200,150,90,0.4);
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.hero .quick-links a:hover {
+  background: var(--camel);
+  color: var(--navy-dark);
+  border-color: var(--camel);
+}
 
-/* NAV */
+/* ============ NAV ============ */
 nav.toc {
   background: var(--cream-dk);
   border-bottom: 1px solid #ddd2bc;
@@ -90,13 +145,14 @@ nav.toc {
   position: sticky;
   top: 0;
   z-index: 50;
+  box-shadow: var(--shadow-sm);
 }
 nav.toc ul {
   list-style: none;
   padding: 0; margin: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 6px 18px;
+  gap: 4px 14px;
   justify-content: center;
 }
 nav.toc a {
@@ -105,21 +161,26 @@ nav.toc a {
   font-weight: 600;
   text-transform: uppercase;
   font-size: 11px;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
+  padding: 4px 8px;
+  border-radius: 3px;
+  transition: background .15s;
 }
-nav.toc a:hover { color: var(--camel); }
+nav.toc a:hover { background: var(--camel-lt); color: var(--navy); }
+nav.toc a.active { background: var(--navy); color: var(--camel-lt); }
 
-/* SECTIONS */
+/* ============ MAIN ============ */
 main { padding: 56px 0 80px; }
-section { margin: 0 0 64px; scroll-margin-top: 56px; }
+section { margin: 0 0 72px; scroll-margin-top: 72px; }
 section h2 {
   font-family: var(--serif);
-  font-size: 36px;
+  font-size: 38px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.18;
   color: var(--navy);
   margin: 0 0 8px;
   padding-top: 16px;
+  letter-spacing: -0.01em;
 }
 section .section-kicker {
   font-size: 11px;
@@ -190,22 +251,33 @@ blockquote cite {
 }
 .callout-dark p { color: var(--cream); margin-bottom: 8px; }
 .callout-dark p:last-child { margin-bottom: 0; }
-.callout-dark .label {
+.callout-dark .label, .callout .label {
   font-size: 11px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--camel-lt);
   font-weight: 700;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  display: block;
+}
+.callout .label { color: var(--navy); }
+hr.section-rule {
+  border: none;
+  height: 2px;
+  background: var(--camel);
+  width: 60px;
+  margin: 12px 0 24px;
 }
 
-/* GRID OF CARDS */
+/* ============ CARD GRIDS ============ */
 .cards-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
 .cards-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin: 24px 0; }
 .cards-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 12px; margin: 24px 0; }
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .cards-2, .cards-3, .cards-4 { grid-template-columns: 1fr; }
-  .hero h1 { font-size: 36px; }
+}
+@media (max-width: 700px) {
+  .hero h1 { font-size: 38px; }
   .hero p.lead { font-size: 18px; }
   section h2 { font-size: 28px; }
   blockquote { font-size: 18px; }
@@ -215,6 +287,7 @@ blockquote cite {
   border-top: 3px solid var(--camel);
   border-radius: 0 0 6px 6px;
   padding: 18px 18px 16px;
+  box-shadow: var(--shadow-sm);
 }
 .card .num {
   font-family: var(--serif);
@@ -234,7 +307,6 @@ blockquote cite {
 }
 .card p { font-size: 14px; line-height: 1.5; margin-bottom: 6px; }
 .card .src { font-size: 12px; color: var(--muted); font-style: italic; margin-top: 4px; }
-
 .card-dark {
   background: var(--navy);
   color: var(--cream);
@@ -243,7 +315,170 @@ blockquote cite {
 .card-dark p { color: var(--cream); }
 .card-dark .num { color: var(--camel-lt); }
 
-/* MSTM diagram (CSS) */
+/* ============ FIGURE ============ */
+figure {
+  margin: 24px 0;
+  padding: 16px;
+  background: #fff;
+  border: 1px solid var(--cream-dk);
+  border-radius: 6px;
+  box-shadow: var(--shadow-sm);
+}
+figure img { border-radius: 4px; }
+figure figcaption {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--muted);
+  font-style: italic;
+  line-height: 1.4;
+}
+figure figcaption strong { color: var(--navy); font-style: normal; }
+
+/* ============ ACCORDION ============ */
+.accordion { margin: 24px 0; }
+.acc-item {
+  background: var(--cream-dk);
+  border-left: 3px solid var(--camel);
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.acc-head {
+  padding: 14px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+  background: var(--cream-dk);
+  transition: background .15s;
+  user-select: none;
+}
+.acc-head:hover { background: #efe9da; }
+.acc-head .chev {
+  margin-left: auto;
+  font-size: 14px;
+  color: var(--camel);
+  font-weight: 400;
+  transition: transform .25s;
+}
+.acc-item.open .acc-head .chev { transform: rotate(180deg); }
+.acc-head .badge {
+  display: inline-block;
+  padding: 2px 10px;
+  background: var(--navy);
+  color: var(--camel-lt);
+  border-radius: 12px;
+  font-size: 11px;
+  font-family: var(--sans);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.acc-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .35s ease-out;
+}
+.acc-item.open .acc-body { max-height: 5000px; transition: max-height .6s ease-in; }
+.acc-body-inner { padding: 4px 20px 18px; }
+.acc-body-inner p:last-child { margin-bottom: 0; }
+.acc-body-inner h4:first-child { margin-top: 14px; }
+
+/* ============ PHASE SLIDER ============ */
+.slider {
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+  margin: 24px 0;
+  border: 1px solid var(--cream-dk);
+}
+.slider .phase-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.slider .phase-tab {
+  flex: 1;
+  min-width: 110px;
+  padding: 12px 8px;
+  background: var(--cream-dk);
+  color: var(--navy);
+  border: 2px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: var(--serif);
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  transition: all .2s;
+}
+.slider .phase-tab:hover { background: #efe9da; }
+.slider .phase-tab.active {
+  background: var(--navy);
+  color: var(--camel-lt);
+  border-color: var(--camel);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+.slider .phase-tab .num {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 4px;
+  color: var(--camel);
+}
+.slider .phase-tab.active .num { color: var(--camel-lt); }
+.slider .phase-panel { display: none; padding: 8px 0; min-height: 240px; }
+.slider .phase-panel.active { display: block; animation: fadeIn .25s; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+.slider .phase-panel h4 {
+  font-family: var(--serif);
+  font-size: 22px;
+  color: var(--navy);
+  margin: 0 0 12px;
+  font-weight: 700;
+}
+.slider .phase-panel .mstm-pills {
+  display: flex; gap: 6px; flex-wrap: wrap; margin: 12px 0;
+}
+.slider .phase-panel .mstm-pills span {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--navy);
+  color: var(--camel-lt);
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: var(--sans);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.slider .phase-panel ul {
+  list-style: none;
+  padding: 0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+.slider .phase-panel ul li {
+  padding-left: 24px;
+  position: relative;
+  margin-bottom: 6px;
+}
+.slider .phase-panel ul li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--camel);
+  font-weight: 700;
+}
+
+/* ============ MSTM DIAGRAM (CSS) ============ */
 .mstm-diag {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
@@ -254,6 +489,9 @@ blockquote cite {
   margin: 24px 0;
   align-items: center;
 }
+@media (max-width: 700px) {
+  .mstm-diag { grid-template-columns: 1fr; }
+}
 .mstm-diag .col-init, .mstm-diag .col-out {
   background: var(--white);
   padding: 16px;
@@ -261,8 +499,8 @@ blockquote cite {
   border: 1px solid var(--camel-lt);
 }
 .mstm-diag .col-init h6, .mstm-diag .col-out h6 {
-  font-family: var(--serif); font-size: 14px; font-weight: 700;
-  color: var(--navy); margin: 0 0 8px; text-transform: uppercase; letter-spacing: 0.08em;
+  font-family: var(--serif); font-weight: 700; color: var(--navy);
+  margin: 0 0 8px; text-transform: uppercase; letter-spacing: 0.08em;
   font-size: 11px;
 }
 .mstm-diag ul { list-style: none; padding: 0; margin: 0; font-size: 13px; line-height: 1.4; }
@@ -296,11 +534,12 @@ blockquote cite {
   letter-spacing: 0.05em;
 }
 
-/* TABLE */
+/* ============ TABLES & FILTER ============ */
+.table-wrap { overflow-x: auto; margin: 16px 0; }
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 16px 0 8px;
+  margin: 0;
   font-size: 14px;
 }
 th {
@@ -321,7 +560,42 @@ td {
 }
 tr:nth-child(even) td { background: #efe9da; }
 
-/* REFERENCES */
+.filter-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 16px 0 8px;
+  align-items: center;
+}
+.filter-bar .label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin-right: 4px;
+}
+.filter-chip {
+  padding: 5px 12px;
+  background: var(--cream-dk);
+  border: 1px solid var(--camel-lt);
+  border-radius: 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--navy);
+  cursor: pointer;
+  transition: all .15s;
+  font-family: var(--sans);
+}
+.filter-chip:hover { background: var(--camel-lt); }
+.filter-chip.active {
+  background: var(--navy);
+  color: var(--camel-lt);
+  border-color: var(--navy);
+}
+tr.hidden-row { display: none; }
+
+/* ============ REFERENCES ============ */
 .refs ol { padding-left: 22px; }
 .refs li {
   font-size: 13.5px;
@@ -330,13 +604,14 @@ tr:nth-child(even) td { background: #efe9da; }
 }
 .refs li::marker { color: var(--camel); }
 
-/* FOOTER */
+/* ============ FOOTER ============ */
 footer {
   background: var(--navy-dark);
   color: var(--cream);
-  padding: 48px 24px 32px;
+  padding: 56px 24px 36px;
   text-align: center;
   font-size: 14px;
+  border-top: 8px solid var(--camel);
 }
 footer .container { max-width: 720px; }
 footer h3 {
@@ -352,8 +627,34 @@ footer .legal {
   margin-top: 24px;
   font-style: italic;
 }
+.back-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--navy);
+  color: var(--camel-lt);
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--camel);
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 2px solid var(--camel);
+  font-size: 18px;
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: all .3s;
+  z-index: 100;
+  box-shadow: var(--shadow-md);
+}
+.back-to-top.visible { opacity: 1; transform: none; pointer-events: auto; }
+.back-to-top:hover { background: var(--camel); color: var(--navy); }
 
-/* small */
+/* ============ MISC ============ */
 .small { font-size: 13px; color: var(--muted); }
 .tag {
   display: inline-block;
@@ -367,20 +668,22 @@ footer .legal {
   border-radius: 12px;
   margin-right: 6px;
 }
-hr.section-rule {
-  border: none;
-  height: 2px;
-  background: var(--camel);
-  width: 60px;
-  margin: 12px 0 24px;
+.print-hide { }
+@media print {
+  nav.toc, .back-to-top, .filter-bar { display: none !important; }
+  .acc-item .acc-body { max-height: none !important; }
+  .slider .phase-panel { display: block !important; margin-bottom: 24px; border-bottom: 1px solid #ccc; padding-bottom: 16px; }
+  .slider .phase-tabs { display: none; }
+  body { background: white; }
 }
 </style>
 </head>
 <body>
 
+<!-- ============ HERO ============ -->
 <header class="hero">
   <div class="container">
-    <p class="kicker">Deep Dive · Probevorlesung Companion · IFB19.3</p>
+    <p class="kicker">Deep-Dive Companion · Probevorlesung · IFB19.3</p>
     <h1>Change Management <em>in Fashion Business</em></h1>
     <p class="lead">From Lewin to MSTM — and what V. Fraas teaches us about transformation under governance pressure.</p>
     <div class="meta">
@@ -388,22 +691,30 @@ hr.section-rule {
       <div class="org">Henley Business School · University of Reading</div>
       <div class="ctx">Probevorlesung at TEXOVERSUM · Reutlingen University · Module IFB19.3 · 07 May 2026</div>
     </div>
+    <div class="quick-links">
+      <a href="#mstm">→ The MSTM Framework</a>
+      <a href="#vfraas">→ The V. Fraas Case</a>
+      <a href="#examples">→ Live Industry Examples</a>
+      <a href="#references">→ References</a>
+    </div>
   </div>
 </header>
 
+<!-- ============ NAV ============ -->
 <nav class="toc">
   <div class="container">
     <ul>
       <li><a href="#overview">Overview</a></li>
       <li><a href="#why-theory">Why Theory</a></li>
-      <li><a href="#four-generations">Four Generations</a></li>
-      <li><a href="#mstm">The MSTM Model</a></li>
-      <li><a href="#vfraas">V. Fraas Case</a></li>
-      <li><a href="#patterns">Five Patterns</a></li>
+      <li><a href="#four-generations">4 Generations</a></li>
+      <li><a href="#mstm">MSTM Framework</a></li>
+      <li><a href="#propositions">Propositions</a></li>
+      <li><a href="#vfraas">V. Fraas</a></li>
+      <li><a href="#patterns">5 Patterns</a></li>
       <li><a href="#examples">Live Examples</a></li>
+      <li><a href="#beyond">Beyond Gen 4</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="#references">References</a></li>
-      <li><a href="#further">Further Reading</a></li>
     </ul>
   </div>
 </nav>
@@ -411,9 +722,9 @@ hr.section-rule {
 <main>
 <div class="container">
 
-<!-- OVERVIEW -->
+<!-- ============ OVERVIEW ============ -->
 <section id="overview">
-  <p class="section-kicker">01 · Lecture Overview</p>
+  <p class="section-kicker">01 · Lecture overview</p>
   <h2>What this lecture sets out to do.</h2>
   <hr class="section-rule">
   <p class="standfirst">In forty-five minutes, this lecture moves from teaching philosophy through eighty years of organisational change theory to a 140-year-old Bavarian textile firm in existential crisis. Three acts; one argument; one model.</p>
@@ -429,7 +740,7 @@ hr.section-rule {
     <div class="card">
       <div class="num">Act 2 · 20 min</div>
       <h5>Theoretical Models</h5>
-      <p>Four generations of change theory — Lewin, Kotter, Weick, Hannan &amp; Freeman. A fifth generation: MSTM, from doctoral research at Henley.</p>
+      <p>Four generations of change theory — Lewin, Kotter, Weick, Hannan &amp; Freeman. A fifth: MSTM, from doctoral research at Henley.</p>
     </div>
     <div class="card">
       <div class="num">Act 3 · 20 min</div>
@@ -439,66 +750,161 @@ hr.section-rule {
   </div>
 </section>
 
-<!-- WHY THEORY -->
+<!-- ============ WHY THEORY ============ -->
 <section id="why-theory">
   <p class="section-kicker">02 · Hook</p>
   <h2>Why theory at all? Because change usually fails.</h2>
   <hr class="section-rule">
-  <p>Across twenty-five years of empirical research on organisational change, one finding has remained stubbornly stable: <strong>roughly seventy per cent of organisational change initiatives fail to meet their stated objectives</strong>. The number originates in <a href="https://hbr.org/2000/05/cracking-the-code-of-change">Beer and Nohria's (2000)</a> Harvard Business Review piece, was reaffirmed by Kotter (2012), and was synthesised again by <a href="https://www.tandfonline.com/doi/abs/10.1080/14697017.2011.630507">Burnes (2011)</a> in his Journal of Change Management meta-review.</p>
+  <p>Across twenty-five years of empirical research, one finding has remained stubbornly stable: <strong>roughly seventy per cent of organisational change initiatives fail to meet their stated objectives</strong>. The number originates in <a href="https://hbr.org/2000/05/cracking-the-code-of-change">Beer and Nohria's (2000)</a> Harvard Business Review piece, was contested critically by <a href="https://www.tandfonline.com/doi/abs/10.1080/14697017.2011.630506">Hughes (2011)</a>, reaffirmed by Kotter (2012), reviewed by <a href="https://www.tandfonline.com/doi/abs/10.1080/14697017.2011.630507">Burnes (2011)</a>, and reproduced by <a href="https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/the-state-of-organizations-2023">McKinsey &amp; Company (2023)</a> in the State of Organizations report.</p>
 
-  <p>This is not a marketing number from a consulting firm. It is the consensus of the academic literature. It implies something uncomfortable for fashion graduates entering management roles: in five years, statistically, seven out of ten transformation initiatives they are part of will not deliver on their objectives.</p>
+  <p>This is not a marketing number from a consulting firm — even Hughes, who critiques the headline figure on methodological grounds, concedes that the consensus across scholarly studies and large-N consulting research consistently lands in the 60–80 % range. For fashion graduates entering management roles, the implication is uncomfortable: in five years, statistically, seven out of ten transformation initiatives they are part of will not deliver on their objectives.</p>
 
   <div class="callout-dark">
-    <div class="label">The argument of the lecture</div>
+    <span class="label">The argument of the lecture</span>
     <p>Failure rates of this magnitude do not mean change does not work. They mean our theories explain only part of the picture. Each generation of change theory captured something real and missed something else. The way to teach change well is to teach the full progression — and to be honest about where the current frontier sits.</p>
   </div>
 </section>
 
-<!-- FOUR GENERATIONS -->
+<!-- ============ FOUR GENERATIONS ============ -->
 <section id="four-generations">
-  <p class="section-kicker">03 · Pflichtthema 1 · Theoretical Models</p>
+  <p class="section-kicker">03 · Pflichtthema 1 · Theoretical models</p>
   <h2>Four generations of organisational change theory.</h2>
   <hr class="section-rule">
-  <p class="standfirst">Each generation answered the questions of its time — and exposed the limits of the previous.</p>
+  <p class="standfirst">Each generation answered the questions of its time — and exposed the limits of the previous. Click each generation to expand.</p>
 
-  <h3>Generation 1 · Behavioural foundations (Lewin)</h3>
-  <p><a href="https://journals.sagepub.com/doi/10.1177/001872674700100103">Kurt Lewin (1947)</a> founded the field. Two contributions persist on every change-management slide deck in the world. First, the <strong>three-phase model</strong> — Unfreeze, Change, Refreeze. Second, <strong>force-field analysis</strong> — an organisation as a system of driving and restraining forces in dynamic equilibrium.</p>
-  <p>Applied to fashion today, the driving forces are visible: sustainability mandates, the shift to direct-to-consumer channels, the Gen-Z value shift. The restraining forces are equally visible: brand and heritage culture, wholesale dependency, legacy investments in physical retail.</p>
-  <p><strong>Limit.</strong> Refreeze assumes a stable end-state. In fashion, the equilibrium itself is moving. <a href="https://wornwear.patagonia.com/">Patagonia's Worn Wear initiative</a> (launched 2013) is Lewin avant la lettre — but notice it never reaches refreeze. The brand operates in permanent motion.</p>
+  <figure>
+    <svg viewBox="0 0 880 280" xmlns="http://www.w3.org/2000/svg" aria-label="Timeline of four generations of organisational change theory plus MSTM as fifth">
+      <!-- timeline base -->
+      <rect x="20" y="138" width="840" height="6" fill="#C8965A" rx="3"/>
+      <!-- generation marks -->
+      <g font-family="Georgia, serif" font-size="14" font-weight="700">
+        <!-- Gen 1 -->
+        <circle cx="120" cy="141" r="11" fill="#1B2A4E"/>
+        <text x="120" y="145" text-anchor="middle" font-size="11" fill="#E6CBA1">1</text>
+        <text x="120" y="100" text-anchor="middle" font-size="11" fill="#8B8680" letter-spacing="0.05em">1940s–60s</text>
+        <text x="120" y="80" text-anchor="middle" font-size="15" fill="#1B2A4E">Behavioural</text>
+        <text x="120" y="180" text-anchor="middle" font-size="11" fill="#2C2C2C" font-style="italic">Lewin</text>
+        <text x="120" y="195" text-anchor="middle" font-size="10" fill="#8B8680">How do groups change?</text>
+        <!-- Gen 2 -->
+        <circle cx="290" cy="141" r="11" fill="#1B2A4E"/>
+        <text x="290" y="145" text-anchor="middle" font-size="11" fill="#E6CBA1">2</text>
+        <text x="290" y="100" text-anchor="middle" font-size="11" fill="#8B8680" letter-spacing="0.05em">1980s–90s</text>
+        <text x="290" y="80" text-anchor="middle" font-size="15" fill="#1B2A4E">Sequential</text>
+        <text x="290" y="180" text-anchor="middle" font-size="11" fill="#2C2C2C" font-style="italic">Kotter · Beer</text>
+        <text x="290" y="195" text-anchor="middle" font-size="10" fill="#8B8680">How do leaders steer?</text>
+        <!-- Gen 3 -->
+        <circle cx="460" cy="141" r="11" fill="#1B2A4E"/>
+        <text x="460" y="145" text-anchor="middle" font-size="11" fill="#E6CBA1">3</text>
+        <text x="460" y="100" text-anchor="middle" font-size="11" fill="#8B8680" letter-spacing="0.05em">1990s–2000s</text>
+        <text x="460" y="80" text-anchor="middle" font-size="15" fill="#1B2A4E">Processual</text>
+        <text x="460" y="180" text-anchor="middle" font-size="11" fill="#2C2C2C" font-style="italic">Weick · Pettigrew</text>
+        <text x="460" y="195" text-anchor="middle" font-size="10" fill="#8B8680">How does meaning emerge?</text>
+        <!-- Gen 4 -->
+        <circle cx="630" cy="141" r="11" fill="#1B2A4E"/>
+        <text x="630" y="145" text-anchor="middle" font-size="11" fill="#E6CBA1">4</text>
+        <text x="630" y="100" text-anchor="middle" font-size="11" fill="#8B8680" letter-spacing="0.05em">2000s–today</text>
+        <text x="630" y="80" text-anchor="middle" font-size="15" fill="#1B2A4E">Ecological</text>
+        <text x="630" y="180" text-anchor="middle" font-size="11" fill="#2C2C2C" font-style="italic">Hannan &amp; Freeman</text>
+        <text x="630" y="195" text-anchor="middle" font-size="10" fill="#8B8680">Why do organisations die?</text>
+        <!-- Gen 5 -->
+        <circle cx="800" cy="141" r="14" fill="#C8965A" stroke="#1B2A4E" stroke-width="2"/>
+        <text x="800" y="146" text-anchor="middle" font-size="13" fill="#1B2A4E" font-weight="700">5</text>
+        <text x="800" y="100" text-anchor="middle" font-size="11" fill="#1B2A4E" letter-spacing="0.05em" font-weight="700">2026 →</text>
+        <text x="800" y="80" text-anchor="middle" font-size="15" fill="#1B2A4E" font-weight="700">MSTM</text>
+        <text x="800" y="180" text-anchor="middle" font-size="11" fill="#2C2C2C" font-style="italic">Neusser</text>
+        <text x="800" y="195" text-anchor="middle" font-size="10" fill="#8B8680">How is mandate built?</text>
+      </g>
+      <!-- caption strip -->
+      <g font-family="Calibri, Arial, sans-serif" font-size="11" fill="#8B8680" font-style="italic">
+        <text x="440" y="245" text-anchor="middle">Each generation answered the leading question of its time. None fully addressed:</text>
+        <text x="440" y="262" text-anchor="middle" fill="#1B2A4E" font-style="normal" font-weight="700">how an externally-mandated leader builds Mandate.</text>
+      </g>
+    </svg>
+    <figcaption><strong>The four generations of organisational change theory plus MSTM as a proposed fifth.</strong> Pedagogical heuristic — see <a href="#beyond">Beyond Gen 4</a> for contemporary alternatives not pictured (institutional theory, paradox theory, practice theory, dynamic capabilities).</figcaption>
+  </figure>
 
-  <h3>Generation 2 · Sequential models (Kotter, Beer)</h3>
-  <p>If Lewin asked <em>how groups move</em>, John Kotter asked <em>how a leader makes them move</em>. The eight-step model — urgency, coalition, vision, communicate, empower, quick wins, consolidate, anchor — is divided in half: steps one to four create the climate; steps five to eight engage and anchor. Kotter (2012) bridged academic theory and management practice in a way that made organisational change teachable. Beer and Nohria (2000) added the famous <strong>Theory E versus Theory O</strong> dichotomy, which still shapes consulting practice today.</p>
-  <p><strong>Limit.</strong> Linear and rationalist. Treats organisations as machines a good plan can steer.</p>
-  <p><strong>Fashion illustration.</strong> <a href="https://www.businessoffashion.com/articles/luxury/burberrys-marco-gobbetti-the-quiet-power-broker/">Burberry under Marco Gobbetti (2017–2021)</a> ran a textbook Kotter sequence. The coalition: board, family trust, the hire of Riccardo Tisci as creative director. Quick wins: the B-Series drops. The anchor: a brand reset under the new Thomas Burberry monogram. It worked — but only because the coalition held.</p>
+  <div class="accordion" id="gens-acc">
+    <div class="acc-item open">
+      <div class="acc-head">
+        <span class="badge">Gen 1</span>
+        <span>Behavioural foundations · Lewin</span>
+        <span class="chev">▾</span>
+      </div>
+      <div class="acc-body"><div class="acc-body-inner">
+        <p><a href="https://journals.sagepub.com/doi/10.1177/001872674700100103">Kurt Lewin (1947)</a> founded the field. Two contributions persist on every change-management slide deck in the world. First, the <strong>three-phase model</strong> — Unfreeze, Change, Refreeze. Second, <strong>force-field analysis</strong> — an organisation as a system of driving and restraining forces in dynamic equilibrium.</p>
+        <p>Applied to fashion today, the driving forces are visible: sustainability mandates, the shift to direct-to-consumer channels, the Gen-Z value shift. The restraining forces are equally visible: brand and heritage culture, wholesale dependency, legacy investments in physical retail.</p>
+        <h4>Limit</h4>
+        <p>Refreeze assumes a stable end-state. In fashion, the equilibrium itself is moving. <a href="https://wornwear.patagonia.com/">Patagonia's Worn Wear initiative</a> (launched 2013) is Lewin avant la lettre — but notice it never reaches refreeze. The brand operates in permanent motion.</p>
+        <p class="small">Reference: Lewin (1947).</p>
+      </div></div>
+    </div>
 
-  <h3>Generation 3 · Processual turn (Weick, Pettigrew)</h3>
-  <p>Karl Weick (1995) and Andrew Pettigrew (1987) challenged a foundational assumption. Organisations do not have change events; they are constantly becoming. <strong>Meaning precedes structure.</strong> Three insights: <em>enactment</em> (people construct the environments they then respond to); <em>selection</em> (from multiple plausible interpretations, the organisation selects one and acts as if it were true); <em>retention</em> (what worked once becomes the basis for future sensemaking, even when conditions shift).</p>
-  <blockquote>
-    Why couldn't Burberry, Gucci or Prada simply pivot to circularity? Because their organisational sensemaking was built around linearity, exclusivity and seasonality. The "truth" the brand had selected and retained over decades shapes what its people can even perceive as a credible move.
-  </blockquote>
-  <p><strong>Limit.</strong> Rich on interpretation, thin on prescription. Weick tells us what change <em>is</em>, not how to <em>lead</em> it.</p>
+    <div class="acc-item">
+      <div class="acc-head">
+        <span class="badge">Gen 2</span>
+        <span>Sequential models · Kotter, Beer</span>
+        <span class="chev">▾</span>
+      </div>
+      <div class="acc-body"><div class="acc-body-inner">
+        <p>If Lewin asked <em>how groups move</em>, John Kotter asked <em>how a leader makes them move</em>. The eight-step model — urgency, coalition, vision, communicate, empower, quick wins, consolidate, anchor — is divided in half: steps one to four create the climate; steps five to eight engage and anchor. Kotter (2012) bridged academic theory and management practice in a way that made organisational change teachable. Beer and Nohria (2000) added the famous <strong>Theory E versus Theory O</strong> dichotomy, which still shapes consulting practice today.</p>
+        <h4>Limit</h4>
+        <p>Linear and rationalist. Treats organisations as machines a good plan can steer.</p>
+        <h4>Fashion illustration</h4>
+        <p><a href="https://www.businessoffashion.com/articles/luxury/burberrys-marco-gobbetti-the-quiet-power-broker/">Burberry under Marco Gobbetti (2017–2021)</a> ran a textbook Kotter sequence. The coalition: board, family trust, the hire of Riccardo Tisci as creative director. Quick wins: the B-Series drops. The anchor: a brand reset under the new Thomas Burberry monogram. It worked — but only because the coalition held.</p>
+        <p class="small">References: Kotter (2012); Beer &amp; Nohria (2000).</p>
+      </div></div>
+    </div>
 
-  <h3>Generation 4 · Ecological perspective (Hannan &amp; Freeman)</h3>
-  <p>Hannan and Freeman's (<a href="https://www.jstor.org/stable/2095567">1984</a>; later <a href="https://www.hup.harvard.edu/books/9780674643499">1989</a>) work brought a darker insight. <strong>Not all organisations can change.</strong> Three concepts: <em>structural inertia</em> (reliability and accountability create rigidity); <em>selection versus adaptation</em> (industries evolve through births and deaths of organisations, not only through individual firms adapting); <em>density dependence</em> (survival rates depend on the population — too few firms, no legitimacy; too many, destructive competition).</p>
-  <p>The fashion industry is a population — and populations have casualties. Recent DACH-region fatalities (2020–2025) include <a href="https://www.businessoffashion.com/articles/news-analysis/esprit-files-for-insolvency-in-germany-and-switzerland/">Esprit Europe (2024)</a>, <a href="https://www.reuters.com/article/tom-tailor-insolvency-idINKBN26G1QT">Tom Tailor (2020)</a>, <a href="https://www.galeria.de/de/info/news/insolvenz">Galeria/Karstadt Kaufhof (2020 and 2023)</a>, Sinn (2020), and Hudson's Bay Germany (2023). Each was, in ecological terms, a high-inertia organism in a niche under structural pressure.</p>
-  <p><strong>Limit.</strong> Powerful at population level — but silent on what the manager standing inside one of these organisations on a Monday morning can actually do.</p>
+    <div class="acc-item">
+      <div class="acc-head">
+        <span class="badge">Gen 3</span>
+        <span>Processual turn · Weick, Pettigrew</span>
+        <span class="chev">▾</span>
+      </div>
+      <div class="acc-body"><div class="acc-body-inner">
+        <p>Karl Weick (1995) and Andrew Pettigrew (1987) challenged a foundational assumption. Organisations do not <em>have</em> change events; they are constantly becoming. <strong>Meaning precedes structure.</strong> Three insights: <em>enactment</em> (people construct the environments they then respond to); <em>selection</em> (from multiple plausible interpretations, the organisation selects one and acts as if it were true); <em>retention</em> (what worked once becomes the basis for future sensemaking, even when conditions shift).</p>
+        <blockquote>
+          Why couldn't Burberry, Gucci or Prada simply pivot to circularity? Because their organisational sensemaking was built around linearity, exclusivity and seasonality. The "truth" the brand had selected and retained over decades shapes what its people can even perceive as a credible move.
+        </blockquote>
+        <h4>Limit</h4>
+        <p>Rich on interpretation, thin on prescription. Weick tells us what change <em>is</em>, not how to <em>lead</em> it.</p>
+        <p class="small">References: Weick (1995); Weick, Sutcliffe, &amp; Obstfeld (2005); Pettigrew (1987).</p>
+      </div></div>
+    </div>
 
-  <h3>The synthesis: a shared blind spot.</h3>
-  <p>Each generation captured something real. None captured the full picture. Lewin is silent on governance. Kotter assumes the leader already has authority. Weick gives us sensemaking but not who legitimately frames the new meaning. Ecology gives us population dynamics but no actor inside.</p>
+    <div class="acc-item">
+      <div class="acc-head">
+        <span class="badge">Gen 4</span>
+        <span>Ecological perspective · Hannan &amp; Freeman</span>
+        <span class="chev">▾</span>
+      </div>
+      <div class="acc-body"><div class="acc-body-inner">
+        <p>Hannan and Freeman's (<a href="https://www.jstor.org/stable/2095567">1984</a>; later <a href="https://www.hup.harvard.edu/books/9780674643499">1989</a>) work brought a darker insight. <strong>Not all organisations can change.</strong> Three concepts: <em>structural inertia</em> (reliability and accountability create rigidity); <em>selection versus adaptation</em> (industries evolve through births and deaths of organisations, not only through individual firms adapting); <em>density dependence</em> (survival rates depend on the population — too few firms, no legitimacy; too many, destructive competition).</p>
+        <p>The fashion industry is a population — and populations have casualties. Recent DACH-region fatalities (2020–2025) include <a href="https://www.businessoffashion.com/articles/news-analysis/esprit-files-for-insolvency-in-germany-and-switzerland/">Esprit Europe (2024)</a>, <a href="https://www.reuters.com/article/tom-tailor-insolvency-idINKBN26G1QT">Tom Tailor (2020)</a>, <a href="https://www.galeria.de/de/info/news/insolvenz">Galeria/Karstadt Kaufhof (2020 and 2023)</a>, Sinn (2020), and Hudson's Bay Germany (2023).</p>
+        <h4>Limit</h4>
+        <p>Powerful at population level — but silent on what the manager standing inside one of these organisations on a Monday morning can actually do.</p>
+        <p class="small">Reference: Hannan &amp; Freeman (1984).</p>
+      </div></div>
+    </div>
+  </div>
+
   <div class="callout-dark">
-    <div class="label">The common blind spot</div>
+    <span class="label">The common blind spot</span>
     <p>How does an externally-mandated leader build the mechanisms, structures and trust required to actually transform an organisation that did not choose this change? This question is the everyday reality of CROs, restructuring leads and successor managers in fashion businesses. None of the four generations fully answers it.</p>
   </div>
 </section>
 
-<!-- MSTM -->
+<!-- ============ MSTM ============ -->
 <section id="mstm">
-  <p class="section-kicker">04 · The Doctoral Contribution</p>
-  <h2>The MSTM Model — Generation 5.</h2>
+  <p class="section-kicker">04 · The doctoral contribution</p>
+  <h2>The MSTM Framework — Generation 5.</h2>
   <hr class="section-rule">
-  <p class="standfirst">Mechanism · Structure · Trust → Mandate. A governance-grounded framework, empirically derived from nine in-depth case studies of leadership transitions in heritage and family firms (Neusser, 2026, DBA Thesis, Henley Business School / University of Reading).</p>
+  <p class="standfirst"><strong>MSTM</strong> stands for <strong>Multilevel Succession Transformation Model</strong> — built on its operational core: <strong>Mechanism · Structure · Trust → Mandate</strong>. Empirically derived from eight in-depth case studies of external successor CEOs in German-speaking Mittelstand family-owned manufacturing firms (Neusser, 2026, DBA Thesis, Henley Business School / University of Reading).</p>
 
-  <div class="mstm-diag">
+  <h3>The MSTM core model</h3>
+  <p>Originally derived from external CEO succession in family firms, the MSTM logic generalises to any externally-mandated transformation where the leader does not initially hold full legitimacy — including CRO turnarounds in heritage fashion businesses such as V. Fraas.</p>
+
+  <div class="mstm-diag" aria-label="MSTM core model — schematic representation">
     <div class="col-init">
       <h6>Initial Conditions</h6>
       <ul>
@@ -527,55 +933,173 @@ hr.section-rule {
       </ul>
     </div>
   </div>
-  <p class="small">Schematic representation of the MSTM core model. Feedback loops connect outcomes to next-cycle initial conditions. Adapted from Neusser (2026), Figure 4.1.</p>
+  <p class="small">Schematic reproduction of the MSTM framework. Feedback loops connect outcomes to next-cycle initial conditions. Source: Neusser (2026), Figure 3, p. 176.</p>
+
+  <figure>
+    <img src="assets/mstm_framework_thesis.png" alt="MSTM Framework as published in the thesis — Multilevel Model of External Succession Dynamics in the German Mittelstand">
+    <figcaption><strong>Figure 3 from the thesis (p. 176).</strong> The MSTM Framework — A Multilevel Model of External Succession Dynamics in the German Mittelstand. Visualisation of the MSTM (Mechanisms-Structure-Trust-Mandate) framework, integrating initial conditions, recursive feedback loops, and succession outcomes.</figcaption>
+  </figure>
 
   <h3>The four MSTM dimensions</h3>
   <div class="cards-4">
-    <div class="card card-dark">
-      <div class="num">M</div>
-      <h5>Mechanism</h5>
-      <p>The concrete instruments through which change is operationalised — restructuring concepts (e.g. IDW S 6), governance routines, cost programmes.</p>
-    </div>
-    <div class="card card-dark">
-      <div class="num">S</div>
-      <h5>Structure</h5>
-      <p>The reorganisation of formal architecture — reporting lines, decision rights, role design — to make the new direction sustainable.</p>
-    </div>
-    <div class="card card-dark">
-      <div class="num">T</div>
-      <h5>Trust</h5>
-      <p>Active building of credibility with banks, employees, supervisory boards and family shareholders. Without trust, no mandate holds beyond day one.</p>
-    </div>
-    <div class="card card-dark">
-      <div class="num">M</div>
-      <h5>Mandate</h5>
-      <p>The legitimacy granted by ownership, supervisory boards or creditors, and renewed at each phase of transformation.</p>
-    </div>
+    <div class="card card-dark"><div class="num">M</div><h5>Mechanism</h5><p>Concrete instruments — restructuring concepts (e.g. IDW S 6), governance routines, cost programmes.</p></div>
+    <div class="card card-dark"><div class="num">S</div><h5>Structure</h5><p>Reorganisation of formal architecture — reporting lines, decision rights, role design.</p></div>
+    <div class="card card-dark"><div class="num">T</div><h5>Trust</h5><p>Active building of credibility with banks, employees, supervisory boards and family shareholders.</p></div>
+    <div class="card card-dark"><div class="num">M</div><h5>Mandate</h5><p>The legitimacy granted by ownership, supervisory boards or creditors, and renewed at each phase.</p></div>
   </div>
 
-  <h3>The five-phase Mandate trajectory</h3>
-  <p>MSTM is not static. Across the doctoral case set, an externally-mandated change moves through five phases — each with characteristic shifts in Trust and Mandate:</p>
-  <table>
-    <thead>
-      <tr><th>Phase</th><th>Description</th><th>MSTM Movement</th></tr>
-    </thead>
-    <tbody>
-      <tr><td><strong>1 · Initial Strategic Mandate Assigned</strong></td><td>External CEO hired. Family supports reform agenda.</td><td>Structure↑, Mechanisms↑, Trust→, Mandate↑</td></tr>
-      <tr><td><strong>2 · Resistance Phase</strong></td><td>Board proposals rejected. Middle-management passive resistance. Legitimacy questioned.</td><td>Trust↓, Mandate↘</td></tr>
-      <tr><td><strong>3 · Narrative Recalibration</strong></td><td>Stakeholder dialogue. Public reframing of mission. Symbolic acts.</td><td>Trust↗, Mandate stabilises</td></tr>
-      <tr><td><strong>4 · Small Wins &amp; Re-endorsement</strong></td><td>Operational improvements demonstrated. Public praise from key shareholder.</td><td>Trust↑, Mandate↑↑</td></tr>
-      <tr><td><strong>5 · Mandate Consolidated</strong></td><td>Governance adapted. Cultural alignment. Formal and symbolic authority converge.</td><td>Structure↑, Trust↑, Mandate stabilised</td></tr>
-    </tbody>
-  </table>
-  <p class="small">Adapted from Neusser (2026), Figure 5.1. Mandate is not granted once — it is re-earned at each phase.</p>
+  <h3>The five-phase Mandate trajectory <span class="small" style="font-weight:400;">— click a phase</span></h3>
+  <p>MSTM is not static. Across the doctoral case set, an externally-mandated change moves through five recursive phases. Click each phase pill to explore.</p>
+
+  <div class="slider" id="phase-slider">
+    <div class="phase-tabs" role="tablist">
+      <button class="phase-tab active" data-phase="1" role="tab"><span class="num">1</span>Initial Mandate</button>
+      <button class="phase-tab" data-phase="2" role="tab"><span class="num">2</span>Resistance</button>
+      <button class="phase-tab" data-phase="3" role="tab"><span class="num">3</span>Recalibration</button>
+      <button class="phase-tab" data-phase="4" role="tab"><span class="num">4</span>Small Wins</button>
+      <button class="phase-tab" data-phase="5" role="tab"><span class="num">5</span>Consolidated</button>
+    </div>
+
+    <div class="phase-panel active" data-phase="1">
+      <h4>Phase 1 — Initial Strategic Mandate Assigned</h4>
+      <div class="mstm-pills"><span>Structure ↑</span><span>Mechanisms ↑</span><span>Trust →</span><span>Mandate ↑</span></div>
+      <ul>
+        <li>External CEO is hired to drive transformation.</li>
+        <li>Family or supervisory board supports the reform agenda.</li>
+        <li>Initial mandate is formally established but not yet tested.</li>
+      </ul>
+    </div>
+
+    <div class="phase-panel" data-phase="2">
+      <h4>Phase 2 — Resistance Phase</h4>
+      <div class="mstm-pills"><span>Trust ↓</span><span>Mandate ↘</span></div>
+      <ul>
+        <li>Board proposals rejected.</li>
+        <li>Middle management shows passive resistance.</li>
+        <li>Legitimacy of the externally-mandated leader is questioned.</li>
+        <li>Almost always within the first ninety days.</li>
+      </ul>
+    </div>
+
+    <div class="phase-panel" data-phase="3">
+      <h4>Phase 3 — Narrative Recalibration</h4>
+      <div class="mstm-pills"><span>Trust ↗</span><span>Mandate stabilises</span></div>
+      <ul>
+        <li>Successor engages in stakeholder dialogue.</li>
+        <li>Public reframing of mission ("from efficiency to empowerment").</li>
+        <li>Symbolic acts — joint speeches, cultural rituals.</li>
+        <li>Sensemaking is consciously reset.</li>
+      </ul>
+    </div>
+
+    <div class="phase-panel" data-phase="4">
+      <h4>Phase 4 — Small Wins and Re-endorsement</h4>
+      <div class="mstm-pills"><span>Trust ↑</span><span>Mandate ↑↑</span></div>
+      <ul>
+        <li>Operational improvements demonstrated.</li>
+        <li>Strategic control regained.</li>
+        <li>Public praise from key family shareholder.</li>
+        <li>Mandate is re-endorsed and strengthened.</li>
+      </ul>
+    </div>
+
+    <div class="phase-panel" data-phase="5">
+      <h4>Phase 5 — Mandate Consolidated</h4>
+      <div class="mstm-pills"><span>Structure ↑</span><span>Trust ↑</span><span>Mandate stabilised</span></div>
+      <ul>
+        <li>Governance adapted to the new leadership style.</li>
+        <li>Cultural alignment achieved.</li>
+        <li>Formal and symbolic authority converge.</li>
+        <li>The trajectory is now self-sustaining.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="small">Source: Neusser (2026), Figure 4, p. 182. Mandate is not granted once — it is re-earned at each phase.</p>
+
+  <figure>
+    <img src="assets/legitimation_loop.png" alt="The Recursive Legitimation Loop in External Succession — five-phase cycle from the thesis">
+    <figcaption><strong>Figure 4 from the thesis (p. 182).</strong> The Recursive Legitimation Loop in External Succession. The process is non-linear and shaped by relational feedback, symbolic alignment, and iterative trust-building. Succession trajectories often move through multiple loops rather than a one-time transition.</figcaption>
+  </figure>
 
   <h3>Where MSTM sits in the literature</h3>
-  <p>On two axes — monodimensional/multilevel × static/processual — MSTM is, to my knowledge, the only adjacent framework that is both <em>processual</em> and <em>multilevel</em>. Agency theory (Eisenhardt, 1989), stewardship theory (Davis et al., 1997), and the socioemotional wealth perspective (Gómez-Mejía et al., 2007) are monodimensional and largely static. Organisational learning (Argyris &amp; Schön, 1996) and legitimacy theory (Suchman, 1995) are processual but mostly single-level. MSTM connects governance, identity and stakeholder logics in one frame — and it does not <em>replace</em> Lewin, Kotter, Weick or Hannan. It integrates them around the unanswered question of governance.</p>
+  <figure>
+    <img src="assets/theoretical_synthesis.png" alt="MSTM as Multilevel Theoretical Synthesis — placement in the static/processual × monodimensional/multilevel quadrant">
+    <figcaption><strong>Figure 5 from the thesis (p. 194).</strong> MSTM as Multilevel Theoretical Synthesis. The framework integrates Agency theory, Stewardship, SEW, Organisational Learning and Legitimacy theory along a recursive path. The empty upper-right quadrant — multilevel and processual — was the contribution gap.</figcaption>
+  </figure>
 </section>
 
-<!-- V. FRAAS -->
+<!-- ============ PROPOSITIONS ============ -->
+<section id="propositions">
+  <p class="section-kicker">05 · From the doctoral thesis</p>
+  <h2>The six propositions of MSTM.</h2>
+  <hr class="section-rule">
+  <p class="standfirst">Six theoretical propositions emerged inductively from the cross-case analysis (Neusser, 2026, Chapter 5). Each is a testable conjecture that future research can probe in larger samples.</p>
+
+  <div class="accordion" id="props-acc">
+    <div class="acc-item open">
+      <div class="acc-head"><span class="badge">P 1</span><span>Successor readiness is relationally co-constructed.</span><span class="chev">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">
+        <p>External-successor (EXT) readiness is not an individual trait but a relationally co-constructed process, shaped by the predecessor's letting-go behaviour, the family's symbolic endorsement, and the institutional readiness of the firm.</p>
+      </div></div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-head"><span class="badge">P 2</span><span>Trust is a recursive, multi-stakeholder process.</span><span class="chev">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">
+        <p>Relational trust between family owners and external successors is a recursive process — built through symbolic micro-decisions and routine credibility tests, not formally declared.</p>
+      </div></div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-head"><span class="badge">P 3</span><span>Institutional preparedness moderates readiness effects.</span><span class="chev">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">
+        <p>Institutional preparedness (governance maturity, role clarity, decision-rights design) moderates the effect of successor readiness on succession outcomes. High preparedness amplifies readiness; low preparedness erodes it.</p>
+      </div></div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-head"><span class="badge">P 4</span><span>Role legitimacy emerges from symbolic alignment.</span><span class="chev">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">
+        <p>Role legitimacy is built through symbolic alignment between the successor's actions and the family's narrative identity — gestures, rituals and visible decisions that signal "fit" beyond the formal mandate.</p>
+      </div></div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-head"><span class="badge">P 5</span><span>Misalignment across domains predicts failure.</span><span class="chev">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">
+        <p>Misalignment across the four domains — competence, trust, governance, and cultural narrative — is the strongest predictor of succession reversal or entrenched ambiguity. Single-domain success is insufficient.</p>
+      </div></div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-head"><span class="badge">P 6</span><span>Successful succession requires multi-level learning.</span><span class="chev">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">
+        <p>Successful external succession requires multi-level learning by the successor and the surrounding system — individual, dyadic (family–successor), and organisational. Single-level learning is insufficient.</p>
+      </div></div>
+    </div>
+  </div>
+  <p class="small">Source: Neusser (2026), Chapter 5, pp. 251–252.</p>
+
+  <h3>How the propositions map to MSTM patterns</h3>
+  <p>Each proposition links to one of five empirical patterns observed across the case set. The figure below shows how Patterns I–V (Trust &amp; Role Fit, Cultural Reframing, Structural Enablement, Stakeholder Logic Shift) emerge from the founder's letting-go process and produce the three outcome logics — identity, governance, stakeholder.</p>
+  <figure>
+    <img src="assets/mstm_pattern_model.jpg" alt="MSTM Pattern Model — Initial Conditions feed five empirical patterns through the founder's letting-go process to produce Identity, Governance and Stakeholder logics">
+    <figcaption><strong>Pattern model from the thesis.</strong> Initial Conditions (SEW, founder's identity, ownership structure) → Phase II Letting-Go Process → five empirical patterns (Trust &amp; Role Fit, Cultural Reframing, Structural Enablement, Stakeholder Logic Shift) → three outcome logics (Identity, Governance, Stakeholder) → Outcomes (Legitimacy, Strategic continuity, Governance maturity). With recursive feedback loops. Source: Neusser (2026).</figcaption>
+  </figure>
+
+  <h3>Empirical typology — four cluster archetypes</h3>
+  <p>The eight focal cases (Alpha–Theta) cluster into four archetypes along two axes — Narrative Orientation (Stewardship ↔ Transformation) and Governance Formality (Low ↔ High):</p>
+  <figure>
+    <img src="assets/mstm_clusters.jpg" alt="Cluster matrix — Hybrid Navigators, Legacy Stewards, Crisis Intervenors, Strategic Revitalisers — eight cases plotted">
+    <figcaption><strong>Cluster typology from the thesis.</strong> The eight focal cases distribute across four archetypes — Hybrid Navigators, Legacy Stewards, Crisis Intervenors, Strategic Revitalisers — based on narrative orientation and governance formality. Source: Neusser (2026).</figcaption>
+  </figure>
+
+  <h3>Actor archetypes across stakeholder roles</h3>
+  <p>Beyond the cluster typology, the thesis identifies sixteen stakeholder archetypes distributed across the four cluster types — predecessors, successors, family shareholders, and advisors:</p>
+  <figure>
+    <img src="assets/archetypes.png" alt="Heatmap of sixteen stakeholder archetypes across four cluster types — frequency of appearance in 102 coded interviews">
+    <figcaption><strong>Figure 2 from the thesis (p. 166).</strong> Actor Archetypes Across Stakeholder Roles. Distribution of sixteen stakeholder archetypes across the four succession clusters, based on 102 coded interviews. Each archetype captures how actors influence or inhibit succession outcomes through the deployment of mechanisms, structures, cultivation of trust, and negotiation of mandate.</figcaption>
+  </figure>
+</section>
+
+<!-- ============ V. FRAAS ============ -->
 <section id="vfraas">
-  <p class="section-kicker">05 · Pflichtthema 2 · Applied Change in Fashion</p>
+  <p class="section-kicker">06 · Pflichtthema 2 · Applied change in fashion</p>
   <h2>The V. Fraas case — 140 years of heritage in scarves.</h2>
   <hr class="section-rule">
   <p class="standfirst">Helmbrechts, Bavaria. A heritage manufacturer of scarves and accessories — clients ranging from luxury maisons to mass retail. Eight months as Chief Restructuring Officer between August 2023 and April 2024.</p>
@@ -587,47 +1111,122 @@ hr.section-rule {
     <div class="card card-dark"><div class="num">runway</div><h5>&lt; 90 d</h5><p>payroll on day 1</p></div>
   </div>
 
-  <h3>Phase 1 — Diagnose before you change anything (first 30 days)</h3>
-  <p>Even — and especially — under existential pressure, the discipline of structured diagnosis is non-negotiable. The diagnosis covered four quadrants: <strong>Financial</strong> (13-week cash plan, debt structure mapping, liquidity forecast per IDW Standard S 11; IDW, 2014); <strong>Operational</strong> (order book, production cost per unit, bottleneck identification); <strong>Stakeholder</strong> (bank syndicate posture, works council position, owner family alignment); <strong>Strategic</strong> (brand &amp; portfolio fit, customer concentration, competitive trajectory).</p>
-  <div class="callout">
-    <p><strong>Classroom prompt I use here.</strong> Which quadrant do leaders typically over-weight in a crisis — and why is that dangerous? — In my experience, financial. Because it is measurable. Strategic gets under-weighted — and is decisive long-term. Many turnarounds save the patient and lose the company.</p>
+  <figure>
+    <svg viewBox="0 0 880 240" xmlns="http://www.w3.org/2000/svg" aria-label="V. Fraas eight-month CRO mandate timeline">
+      <!-- baseline -->
+      <line x1="40" y1="120" x2="840" y2="120" stroke="#C8965A" stroke-width="3"/>
+      <!-- month markers -->
+      <g font-family="Calibri, Arial, sans-serif" font-size="10" fill="#8B8680">
+        <text x="40" y="150" text-anchor="start">Aug 2023</text>
+        <text x="840" y="150" text-anchor="end">Apr 2024</text>
+      </g>
+      <!-- Phase 1 -->
+      <rect x="40" y="60" width="100" height="50" rx="6" fill="#1B2A4E"/>
+      <text x="90" y="80" text-anchor="middle" font-family="Calibri, Arial, sans-serif" font-size="10" font-weight="700" fill="#E6CBA1" letter-spacing="0.05em">PHASE 1</text>
+      <text x="90" y="98" text-anchor="middle" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#FFFFFF">Diagnose</text>
+      <text x="90" y="178" text-anchor="middle" font-family="Calibri, Arial, sans-serif" font-size="10" fill="#2C2C2C">first 30 days</text>
+      <text x="90" y="194" text-anchor="middle" font-family="Calibri, Arial, sans-serif" font-size="9" fill="#8B8680" font-style="italic">4 quadrants</text>
+      <line x1="90" y1="115" x2="90" y2="125" stroke="#1B2A4E" stroke-width="2"/>
+      <!-- Phase 2 (longest) -->
+      <rect x="160" y="60" width="430" height="50" rx="6" fill="#1B2A4E"/>
+      <text x="375" y="80" text-anchor="middle" font-family="Calibri, Arial, sans-serif" font-size="10" font-weight="700" fill="#E6CBA1" letter-spacing="0.05em">PHASE 2</text>
+      <text x="375" y="98" text-anchor="middle" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#FFFFFF">Three parallel intervention tracks (governed by MSTM)</text>
+      <text x="375" y="178" text-anchor="middle" font-family="Calibri, Arial, sans-serif" font-size="10" fill="#2C2C2C">months 2 – 6</text>
+      <text x="375" y="194" text-anchor="middle" font-family="Calibri, Arial, sans-serif" font-size="9" fill="#8B8680" font-style="italic">Track 1 Liabilities · Track 2 Structure · Track 3 People</text>
+      <line x1="375" y1="115" x2="375" y2="125" stroke="#1B2A4E" stroke-width="2"/>
+      <!-- Phase 3 -->
+      <rect x="610" y="60" width="230" height="50" rx="6" fill="#C8965A"/>
+      <text x="725" y="80" text-anchor="middle" font-family="Calibri, Arial, sans-serif" font-size="10" font-weight="700" fill="#1B2A4E" letter-spacing="0.05em">PHASE 3</text>
+      <text x="725" y="98" text-anchor="middle" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#1B2A4E">Outcome &amp; orderly handover</text>
+      <text x="725" y="178" text-anchor="middle" font-family="Calibri, Arial, sans-serif" font-size="10" fill="#2C2C2C">months 7 – 8</text>
+      <text x="725" y="194" text-anchor="middle" font-family="Calibri, Arial, sans-serif" font-size="9" fill="#8B8680" font-style="italic">IDW S 6 / S 11 · production exit</text>
+      <line x1="725" y1="115" x2="725" y2="125" stroke="#C8965A" stroke-width="2"/>
+      <!-- Pulse markers on Phase 2 for resistance/recalibration peaks -->
+      <circle cx="220" cy="120" r="6" fill="#A83D3D"/>
+      <text x="220" y="225" text-anchor="middle" font-family="Calibri, Arial, sans-serif" font-size="9" fill="#A83D3D" font-style="italic">Resistance peak</text>
+      <circle cx="500" cy="120" r="6" fill="#4A7C59"/>
+      <text x="500" y="225" text-anchor="middle" font-family="Calibri, Arial, sans-serif" font-size="9" fill="#4A7C59" font-style="italic">First small wins</text>
+    </svg>
+    <figcaption><strong>V. Fraas — eight-month CRO mandate (Aug 2023 – Apr 2024).</strong> Three phases overlaid on the MSTM five-phase Mandate trajectory: resistance peaked around month 2; first measurable small wins in month 5 enabled the orderly Phase 3 handover.</figcaption>
+  </figure>
+
+  <div class="accordion" id="vfraas-acc">
+    <div class="acc-item open">
+      <div class="acc-head"><span class="badge">Phase 1</span><span>Diagnose before you change anything (first 30 days)</span><span class="chev">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">
+        <p>Even — and especially — under existential pressure, the discipline of structured diagnosis is non-negotiable. The diagnosis covered four quadrants:</p>
+        <ul>
+          <li><strong>Financial</strong> — 13-week cash plan, debt structure mapping, liquidity forecast per IDW Standard S 11 (IDW, 2014).</li>
+          <li><strong>Operational</strong> — order book, production cost per unit, bottleneck identification.</li>
+          <li><strong>Stakeholder</strong> — bank syndicate posture, works council position, owner family alignment.</li>
+          <li><strong>Strategic</strong> — brand &amp; portfolio fit, customer concentration, competitive trajectory.</li>
+        </ul>
+        <div class="callout">
+          <span class="label">Classroom prompt</span>
+          <p>Which quadrant do leaders typically over-weight in a crisis — and why is that dangerous? — In my experience, financial. Because it is measurable. Strategic gets under-weighted — and is decisive long-term. Many turnarounds save the patient and lose the company.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-head"><span class="badge">Phase 2</span><span>Three parallel transformation tracks (each governed by MSTM)</span><span class="chev">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">
+        <p>In a turnaround, sequential change kills you. We ran three parallel tracks with disciplined sequencing inside each — and each had a different dominant MSTM dimension.</p>
+        <div class="cards-3">
+          <div class="card">
+            <div class="num">Track 1 · Mandate · Trust</div>
+            <h5>Liabilities &amp; Liquidity</h5>
+            <p>IDW S 6 restructuring report (IDW, 2018); IDW S 11 going-concern forecast (IDW, 2014); renegotiation with the bank syndicate.</p>
+          </div>
+          <div class="card">
+            <div class="num">Track 2 · Structure · Mechanisms</div>
+            <h5>Organisation &amp; Structure</h5>
+            <p>Reorganisation of reporting lines; decision-rights redesign; PMO for transformation governance; orderly closure of the German production site.</p>
+          </div>
+          <div class="card">
+            <div class="num">Track 3 · Kotter 4–6 · ADKAR</div>
+            <h5>People &amp; Culture</h5>
+            <p>Works council negotiation; severance and re-skilling programme; leadership communication cadence; psychological safety for remaining staff.</p>
+          </div>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-head"><span class="badge">Human</span><span>The human dimension — ADKAR plus grief</span><span class="chev">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">
+        <p>Drawing on the Henley Postgraduate Certificate in Coaching for Behavioural Change. ADKAR (Hiatt, 2006) gives us five questions, asked of the workforce:</p>
+        <ul>
+          <li><strong>Awareness</strong> — what do employees actually believe about why this is happening?</li>
+          <li><strong>Desire</strong> — what would make them want to participate, not just comply?</li>
+          <li><strong>Knowledge</strong> — do they have the skills the new structure demands?</li>
+          <li><strong>Ability</strong> — can they apply those skills under real conditions?</li>
+          <li><strong>Reinforcement</strong> — what anchors new behaviour after the CRO leaves?</li>
+        </ul>
+        <blockquote>
+          In a heritage company, employees do not resist change. They <em>grieve</em> it. Treating that grief as resistance to be overcome is the single most common — and the single most damaging — error in fashion-industry restructurings.
+          <cite>— from the Henley PGCert, drawing on Bridges (2009) and Kübler-Ross (1969) as adapted to organisations by Conner (1992).</cite>
+        </blockquote>
+      </div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-head"><span class="badge">Phase 3</span><span>Outcome — and honesty</span><span class="chev">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">
+        <p>Turnarounds are rarely "success" or "failure". They are about narrowing the loss and preserving optionality.</p>
+        <h4>What we achieved</h4>
+        <p>Liability side renegotiated with bank syndicate; restructuring plan adopted per IDW S 6; going-concern certified per IDW S 11; German production footprint exited in an orderly fashion; operational organisation stabilised for handover.</p>
+        <h4>What we could not solve</h4>
+        <p>The structural cost disadvantage of German textile production (a problem larger than any single company); long-term brand repositioning (outside CRO scope); workforce loss is real and not erased by orderly process; long-run survival under Generation 5 ecological pressure remains open.</p>
+        <p><em>Teaching change without teaching its limits is not teaching. It is selling.</em></p>
+      </div></div>
+    </div>
   </div>
-
-  <h3>Phase 2 — Three parallel transformation tracks (each governed by MSTM)</h3>
-  <p>In a turnaround, sequential change kills you. We ran three parallel tracks with disciplined sequencing inside each — and each had a different dominant MSTM dimension.</p>
-  <div class="cards-3">
-    <div class="card">
-      <div class="num">Track 1 · Mandate · Trust</div>
-      <h5>Liabilities &amp; Liquidity</h5>
-      <p>IDW S 6 restructuring report (IDW, 2018); IDW S 11 going-concern forecast (IDW, 2014); renegotiation with the bank syndicate.</p>
-    </div>
-    <div class="card">
-      <div class="num">Track 2 · Structure · Mechanisms</div>
-      <h5>Organisation &amp; Structure</h5>
-      <p>Reorganisation of reporting lines; decision-rights redesign; PMO for transformation governance; orderly closure of the German production site.</p>
-    </div>
-    <div class="card">
-      <div class="num">Track 3 · Kotter 4–6 · ADKAR</div>
-      <h5>People &amp; Culture</h5>
-      <p>Works council negotiation; severance and re-skilling programme; leadership communication cadence; psychological safety for remaining staff.</p>
-    </div>
-  </div>
-
-  <h3>The human dimension — ADKAR plus grief</h3>
-  <p>Drawing on the Henley Postgraduate Certificate in Coaching for Behavioural Change. ADKAR (Hiatt, 2006) gives us five questions, asked of the workforce: <strong>Awareness</strong> (what do employees actually believe about why this is happening?); <strong>Desire</strong> (what would make them want to participate, not just comply?); <strong>Knowledge</strong> (do they have the skills the new structure demands?); <strong>Ability</strong> (can they apply those skills under real conditions?); <strong>Reinforcement</strong> (what anchors new behaviour after the CRO leaves?).</p>
-  <blockquote>
-    In a heritage company, employees do not resist change. They <em>grieve</em> it. Treating that grief as resistance to be overcome is the single most common — and the single most damaging — error in fashion-industry restructurings.
-    <cite>— from the Henley PGCert, drawing on Bridges (2009) and Kübler-Ross (1969) as adapted to organisations by Conner (1992).</cite>
-  </blockquote>
-
-  <h3>Phase 3 — Outcome and honesty</h3>
-  <p>Turnarounds are rarely "success" or "failure". They are about narrowing the loss and preserving optionality. <strong>What we achieved.</strong> Liability side renegotiated with bank syndicate; restructuring plan adopted per IDW S 6; going-concern certified per IDW S 11; German production footprint exited in an orderly fashion; operational organisation stabilised for handover. <strong>What we could not solve.</strong> The structural cost disadvantage of German textile production (a problem larger than any single company); long-term brand repositioning (outside CRO scope); workforce loss is real and not erased by orderly process; long-run survival under Generation 5 ecological pressure remains open.</p>
-  <p><em>Teaching change without teaching its limits is not teaching. It is selling.</em></p>
 </section>
 
-<!-- PATTERNS -->
+<!-- ============ PATTERNS ============ -->
 <section id="patterns">
-  <p class="section-kicker">06 · Generalisation</p>
+  <p class="section-kicker">07 · Generalisation</p>
   <h2>Five patterns — V. Fraas applied to fashion generally.</h2>
   <hr class="section-rule">
   <p>Five patterns observed across approximately forty CRO and turnaround mandates over twenty years, including textile, fashion and adjacent heritage industries.</p>
@@ -642,61 +1241,72 @@ hr.section-rule {
   </div>
 </section>
 
-<!-- LIVE EXAMPLES -->
+<!-- ============ EXAMPLES ============ -->
 <section id="examples">
-  <p class="section-kicker">07 · Where this plays out right now</p>
+  <p class="section-kicker">08 · Where this plays out right now</p>
   <h2>Live examples from fashion &amp; textile (2018 – 2025).</h2>
   <hr class="section-rule">
-  <p>Cases I would use in seminar form. Each links to publicly reported coverage. The MSTM lens or relevant generation is noted in brackets.</p>
+  <p>Cases I would use in seminar form. Use the filter to focus on a specific lens.</p>
 
-  <table>
+  <div class="filter-bar" id="ex-filter">
+    <span class="label">Filter:</span>
+    <button class="filter-chip active" data-lens="all">All cases</button>
+    <button class="filter-chip" data-lens="kotter">Kotter</button>
+    <button class="filter-chip" data-lens="mstm">MSTM</button>
+    <button class="filter-chip" data-lens="ecology">Ecological</button>
+    <button class="filter-chip" data-lens="weick">Sensemaking</button>
+    <button class="filter-chip" data-lens="lewin">Lewin</button>
+  </div>
+
+  <div class="table-wrap">
+  <table id="ex-table">
     <thead>
       <tr><th>Brand</th><th>Segment</th><th>What's happening</th><th>Lens</th></tr>
     </thead>
     <tbody>
-      <tr>
+      <tr data-lens="kotter mstm">
         <td><a href="https://www.businessoffashion.com/articles/luxury/burberrys-marco-gobbetti-the-quiet-power-broker/">Burberry</a></td>
         <td>Heritage luxury</td>
         <td>Coalition (CEO + Tisci) rebuilt Mandate; Trust restored; Mechanisms via collection drops.</td>
         <td>Kotter + MSTM</td>
       </tr>
-      <tr>
+      <tr data-lens="mstm">
         <td><a href="https://www.bloomberg.com/news/articles/2020-03-13/wolford-cuts-jobs-as-coronavirus-hammers-luxury-hosiery-maker">Wolford</a></td>
         <td>Heritage hosiery</td>
         <td>Repeat changes of CRO; Mandate never consolidated; Phase 5 not reached.</td>
         <td>MSTM trajectory failure</td>
       </tr>
-      <tr>
+      <tr data-lens="kotter">
         <td><a href="https://www.fashionnetwork.com/news/Hugo-boss-claim-5-strategy-grieder,1265831.html">Hugo Boss</a></td>
         <td>Premium fashion</td>
         <td>Daniel Grieder's "Claim 5" strategy: classic Vision/Communicate plus a structural decision-rights move.</td>
         <td>Kotter at scale</td>
       </tr>
-      <tr>
+      <tr data-lens="ecology">
         <td><a href="https://www.reuters.com/article/tom-tailor-insolvency-idINKBN26G1QT">Tom Tailor</a></td>
         <td>Mid-market apparel</td>
         <td>2020 insolvency. Restructured but never re-positioned.</td>
         <td>Hannan &amp; Freeman live</td>
       </tr>
-      <tr>
+      <tr data-lens="weick ecology">
         <td><a href="https://www.businessoffashion.com/articles/news-analysis/esprit-files-for-insolvency-in-germany-and-switzerland/">Esprit Europe</a></td>
         <td>Heritage casual</td>
         <td>2024 insolvency. Repeated brand resets without governance redesign.</td>
         <td>Sensemaking failure</td>
       </tr>
-      <tr>
+      <tr data-lens="mstm">
         <td><a href="https://www.faz.net/aktuell/wirtschaft/unternehmen/trigema-wolfgang-grupp-uebergibt-das-unternehmen-an-seine-kinder-19158014.html">Trigema</a></td>
         <td>Family textile</td>
         <td>2023 succession (Wolfgang Grupp → next generation). Mandate, Trust, Structure simultaneously renegotiated.</td>
         <td>MSTM — succession variant</td>
       </tr>
-      <tr>
+      <tr data-lens="lewin">
         <td><a href="https://wornwear.patagonia.com/">Patagonia</a></td>
         <td>Outdoor / activist apparel</td>
         <td>Worn Wear (2013→) is force-field analysis in motion: driving and restraining forces explicitly mapped before operational change.</td>
         <td>Lewin (Gen 1)</td>
       </tr>
-      <tr>
+      <tr data-lens="weick mstm">
         <td><a href="https://www.businessoffashion.com/articles/luxury/gucci-to-suffer-from-creative-leadership-vacuum/">Gucci</a></td>
         <td>Luxury</td>
         <td>The 2023–24 creative-leadership transition stalled in narrative recalibration — Phase 3 of the MSTM cycle without progression to small wins.</td>
@@ -704,11 +1314,80 @@ hr.section-rule {
       </tr>
     </tbody>
   </table>
+  </div>
 </section>
 
-<!-- RESEARCH -->
+<!-- ============ BEYOND GEN 4 ============ -->
+<section id="beyond">
+  <p class="section-kicker">09 · The honest postscript</p>
+  <h2>Beyond the four generations.</h2>
+  <hr class="section-rule">
+  <p class="standfirst">The four-generation framing is a pedagogical heuristic — not a literature review. Six contemporary streams sit in the gap between Generation 4 and MSTM. Each addresses a different question; MSTM connects to several of them.</p>
+
+  <div class="callout">
+    <span class="label">Why a heuristic, not a literature review?</span>
+    <p>The four traditions on the previous slides were chosen because each (a) operates at a distinct level of analysis, (b) asks a different leading question, and (c) appears as a backbone in mainstream Bachelor-level change-management textbooks (Schreyögg, 2016; Vahs, 2019; Senior &amp; Swailes, 2020; Cameron &amp; Green, 2019). They are not the only living traditions — they are the four that scaffold a 20-minute lecture for fashion business students. The streams below would belong in a longer treatment.</p>
+  </div>
+
+  <div class="accordion" id="beyond-acc">
+    <div class="acc-item">
+      <div class="acc-head"><span class="badge">A</span><span>Institutional theory &amp; institutional change</span><span class="chev">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">
+        <p>DiMaggio &amp; Powell (1983); Greenwood, Suddaby &amp; Hinings (2002); Greenwood &amp; Hinings (2006). Organisations change in response to legitimacy pressures from their institutional field — coercive, mimetic, normative isomorphism. Radical change in mature institutional fields requires destabilising institutional logics.</p>
+        <p><strong>How MSTM connects:</strong> Mandate is, in institutional terms, a <em>granted legitimacy</em>. Phase 3 (Narrative Recalibration) is institutional work in the sense of Lawrence &amp; Suddaby (2006). The MSTM Initial Condition "Narrative Baggage" is institutional inheritance.</p>
+      </div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-head"><span class="badge">B</span><span>Paradox theory</span><span class="chev">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">
+        <p>Smith &amp; Lewis (2011); Putnam, Fairhurst &amp; Banghart (2016). Organisations face persistent contradictions — exploration vs. exploitation, stability vs. change, individual vs. collective — that cannot be resolved, only managed productively. Successful change holds the tension rather than collapsing it.</p>
+        <p><strong>How MSTM connects:</strong> Heritage as both <em>asset and liability</em> (Pattern 03) is paradoxical. The five-phase trajectory holds continuity (family identity) and transformation (external mandate) simultaneously. Hybrid Evolution outcomes are paradox-managing equilibria.</p>
+      </div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-head"><span class="badge">C</span><span>Practice theory &amp; routine dynamics</span><span class="chev">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">
+        <p>Feldman &amp; Pentland (2003); Nicolini (2012); Feldman, Pentland, D'Adderio &amp; Lazaric (2016). Organisational change is routine change. Routines have ostensive (idealised) and performative (enacted) aspects; change happens when actors re-perform them differently.</p>
+        <p><strong>How MSTM connects:</strong> "Mechanism" in MSTM is, at its operational level, a routine — restructuring report, governance cadence, decision-rights process. Phase 4 (Small Wins and Re-endorsement) is routine performativity made visible.</p>
+      </div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-head"><span class="badge">D</span><span>Microfoundations of strategy</span><span class="chev">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">
+        <p>Felin &amp; Foss (2005); Felin, Foss &amp; Heimeriks (2015). Organisational outcomes are produced by individual-level actions, interactions and cognition. Macro change rests on micro foundations.</p>
+        <p><strong>How MSTM connects:</strong> Mandate is granted by individual stakeholders — board members, family shareholders, bank syndicate seats. Trust (the T) is a dyadic, individual-level construct that aggregates upward.</p>
+      </div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-head"><span class="badge">E</span><span>Dynamic capabilities</span><span class="chev">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">
+        <p>Teece, Pisano &amp; Shuen (1997); Teece (2007); Helfat &amp; Peteraf (2015). Firms compete on their capacity to <em>sense</em> opportunities, <em>seize</em> them, and <em>reconfigure</em> assets. Sensing-seizing-transforming is a meta-capability.</p>
+        <p><strong>How MSTM connects:</strong> The MSTM trajectory is a dynamic capability for governance reconfiguration. Phase 5 (Mandate Consolidated) is the firm having internalised a sensing-seizing-transforming capacity around external leadership.</p>
+      </div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-head"><span class="badge">F</span><span>Punctuated equilibrium &amp; complexity</span><span class="chev">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">
+        <p>Tushman &amp; Romanelli (1985); Gersick (1991); Plowman et al. (2007). Organisations evolve through long periods of stability (deep-structure inertia) interrupted by short revolutionary episodes — and small actions can trigger non-linear change.</p>
+        <p><strong>How MSTM connects:</strong> External CEO succession <em>is</em> a punctuation. The Resistance Phase (2) is the deep structure resisting; Phases 3–4 are revolutionary recombination. MSTM is, in this lens, a process model of one specific punctuation event.</p>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="callout-dark">
+    <span class="label">The honest summary</span>
+    <p>MSTM does not claim to be the next dominant theory. It claims to be one answer to a specific gap — the externally-mandated leader in a heritage governance context — that the four classical generations leave unanswered. Several of the streams above answer adjacent questions better than MSTM does. The teaching value is in showing students <em>which question</em> each frame answers.</p>
+  </div>
+</section>
+
+<!-- ============ RESEARCH ============ -->
 <section id="research">
-  <p class="section-kicker">08 · Research outlook for TEXOVERSUM</p>
+  <p class="section-kicker">09 · Research outlook for TEXOVERSUM</p>
   <h2>Three research streams.</h2>
   <hr class="section-rule">
   <div class="cards-3">
@@ -731,12 +1410,18 @@ hr.section-rule {
       <p class="src">Method: Process tracing + abductive theorising.</p>
     </div>
   </div>
+
+  <figure>
+    <img src="assets/key_contributions.png" alt="Figure 6 from the thesis: Key Contributions of Chapter 5 — theoretical, empirical and applied contributions">
+    <figcaption><strong>Figure 6 from the thesis (p. 199).</strong> Key Contributions of Chapter 5 — theoretical, empirical and applied contributions, organised across three core domains: theoretical development, typological synthesis, and applied tools for diagnosis and intervention.</figcaption>
+  </figure>
+
   <p>Funding paths: <a href="https://www.dfg.de/">DFG</a>, <a href="https://www.bmbf.de/">BMBF</a>, <a href="https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe_en">EU Horizon</a>, and industry-sponsored research with regional fashion partners.</p>
 </section>
 
-<!-- REFERENCES -->
+<!-- ============ REFERENCES ============ -->
 <section id="references" class="refs">
-  <p class="section-kicker">09 · References (APA 7)</p>
+  <p class="section-kicker">10 · References (APA 7)</p>
   <h2>Cumulative reference list.</h2>
   <hr class="section-rule">
   <ol>
@@ -746,14 +1431,22 @@ hr.section-rule {
     <li>Bridges, W. (2009). <em>Managing transitions: Making the most of change</em> (3rd ed.). Da Capo Lifelong Books.</li>
     <li>Burnes, B. (2011). Introduction: Why does change fail, and what can we do about it? <em>Journal of Change Management, 11</em>(4), 445–450.</li>
     <li>Conner, D. R. (1992). <em>Managing at the speed of change</em>. Random House.</li>
+    <li>Cameron, E., &amp; Green, M. (2019). <em>Making sense of change management</em> (5th ed.). Kogan Page.</li>
     <li>Davis, J. H., Schoorman, F. D., &amp; Donaldson, L. (1997). Toward a stewardship theory of management. <em>Academy of Management Review, 22</em>(1), 20–47.</li>
     <li>Dewey, J. (1938). <em>Experience and education</em>. Macmillan.</li>
+    <li>DiMaggio, P. J., &amp; Powell, W. W. (1983). The iron cage revisited: Institutional isomorphism and collective rationality in organizational fields. <em>American Sociological Review, 48</em>(2), 147–160.</li>
     <li>Eisenhardt, K. M. (1989). Agency theory: An assessment and review. <em>Academy of Management Review, 14</em>(1), 57–74.</li>
+    <li>Feldman, M. S., &amp; Pentland, B. T. (2003). Reconceptualizing organizational routines as a source of flexibility and change. <em>Administrative Science Quarterly, 48</em>(1), 94–118.</li>
+    <li>Felin, T., &amp; Foss, N. J. (2005). Strategic organization: A field in search of micro-foundations. <em>Strategic Organization, 3</em>(4), 441–455.</li>
+    <li>Gersick, C. J. G. (1991). Revolutionary change theories: A multilevel exploration of the punctuated equilibrium paradigm. <em>Academy of Management Review, 16</em>(1), 10–36.</li>
+    <li>Greenwood, R., &amp; Hinings, C. R. (2006). Radical organizational change. In S. R. Clegg et al. (Eds.), <em>The SAGE handbook of organization studies</em> (2nd ed., pp. 814–842). Sage.</li>
+    <li>Greenwood, R., Suddaby, R., &amp; Hinings, C. R. (2002). Theorizing change: The role of professional associations in the transformation of institutionalized fields. <em>Academy of Management Journal, 45</em>(1), 58–80.</li>
     <li>EuroCommerce. (2023). <em>Family-owned business in European retail and wholesale</em>. Brussels.</li>
     <li>Gómez-Mejía, L. R., Haynes, K. T., Núñez-Nickel, M., Jacobson, K. J. L., &amp; Moyano-Fuentes, J. (2007). Socioemotional wealth and business risks in family-controlled firms. <em>Administrative Science Quarterly, 52</em>(1), 106–137.</li>
     <li>Hannan, M. T., &amp; Freeman, J. (1984). Structural inertia and organizational change. <em>American Sociological Review, 49</em>(2), 149–164.</li>
     <li>Hannan, M. T., &amp; Freeman, J. (1989). <em>Organizational ecology</em>. Harvard University Press.</li>
     <li>Hiatt, J. M. (2006). <em>ADKAR: A model for change in business, government and our community</em>. Prosci.</li>
+    <li>Hughes, M. (2011). Do 70 per cent of all organizational change initiatives really fail? <em>Journal of Change Management, 11</em>(4), 451–464. <a href="https://doi.org/10.1080/14697017.2011.630506">https://doi.org/10.1080/14697017.2011.630506</a></li>
     <li>IDW. (2014). <em>IDW S 11: Beurteilung des Vorliegens von Insolvenzeröffnungsgründen</em>. Institut der Wirtschaftsprüfer.</li>
     <li>IDW. (2018). <em>IDW S 6: Anforderungen an Sanierungskonzepte</em>. Institut der Wirtschaftsprüfer.</li>
     <li>Karpicke, J. D., &amp; Roediger, H. L. (2008). The critical importance of retrieval for learning. <em>Science, 319</em>(5865), 966–968.</li>
@@ -762,15 +1455,21 @@ hr.section-rule {
     <li>Kübler-Ross, E. (1969). <em>On death and dying</em>. Macmillan.</li>
     <li>Lewin, K. (1947). Frontiers in group dynamics. <em>Human Relations, 1</em>(1), 5–41.</li>
     <li>Lyman, F. (1981). The responsive classroom discussion: The inclusion of all students. In A. Anderson (Ed.), <em>Mainstreaming digest</em> (pp. 109–113). University of Maryland.</li>
-    <li>McKinsey &amp; Company. (2025). <em>The State of Fashion 2025</em>. McKinsey &amp; The Business of Fashion.</li>
+    <li>McKinsey &amp; Company. (2023, April 26). <em>The state of organizations 2023: Making change at scale</em>. McKinsey &amp; Company. <a href="https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/the-state-of-organizations-2023">https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/the-state-of-organizations-2023</a></li>
+    <li>McKinsey &amp; Company, &amp; The Business of Fashion. (2024, November 11). <em>The state of fashion 2025: Challenges at every turn</em>. Business of Fashion. <a href="https://www.mckinsey.com/industries/retail/our-insights/state-of-fashion-2025">https://www.mckinsey.com/industries/retail/our-insights/state-of-fashion-2025</a></li>
     <li>Mintzberg, H. (2004). <em>Managers not MBAs</em>. Berrett-Koehler.</li>
     <li>Modulhandbuch International Fashion Business (B.Sc.). (2025). Hochschule Reutlingen, pp. 83–87.</li>
-    <li>Neusser, C. (2026). <em>Mechanism, Structure, Trust, Mandate: A governance-grounded framework for externally-mandated organisational change</em> [DBA Thesis]. Henley Business School, University of Reading.</li>
+    <li>Nicolini, D. (2012). <em>Practice theory, work, and organization: An introduction</em>. Oxford University Press.</li>
+    <li>Neusser, C. (2026). <em>Navigating external succession in German-speaking family-owned manufacturing companies: A multilevel succession transformation model (MSTM)</em> [DBA Thesis]. Henley Business School, University of Reading.</li>
     <li>Pettigrew, A. M. (1987). Context and action in the transformation of the firm. <em>Journal of Management Studies, 24</em>(6), 649–670.</li>
     <li>Schön, D. A. (1983). <em>The reflective practitioner: How professionals think in action</em>. Basic Books.</li>
+    <li>Senior, B., &amp; Swailes, S. (2020). <em>Organizational change</em> (6th ed.). Pearson.</li>
+    <li>Smith, W. K., &amp; Lewis, M. W. (2011). Toward a theory of paradox: A dynamic equilibrium model of organizing. <em>Academy of Management Review, 36</em>(2), 381–403.</li>
     <li>Strähle, J. (Ed.). (2017). <em>Green fashion retail</em>. Springer Singapore.</li>
     <li>Strähle, J., Bin, S., &amp; Köksal, D. (2015). Sustainable fashion supply chain: Adaption of the SSI-Index. <em>International Journal of Business &amp; Management, 3</em>(5), 232–241.</li>
     <li>Suchman, M. C. (1995). Managing legitimacy: Strategic and institutional approaches. <em>Academy of Management Review, 20</em>(3), 571–610.</li>
+    <li>Teece, D. J. (2007). Explicating dynamic capabilities: The nature and microfoundations of (sustainable) enterprise performance. <em>Strategic Management Journal, 28</em>(13), 1319–1350.</li>
+    <li>Tushman, M. L., &amp; Romanelli, E. (1985). Organizational evolution: A metamorphosis model of convergence and reorientation. <em>Research in Organizational Behavior, 7</em>, 171–222.</li>
     <li>Vahs, D. (2019). <em>Organisation: Ein Lehr- und Managementbuch</em> (10th ed.). Schäffer-Poeschel.</li>
     <li>Varley, R. (2018). <em>Fashion management</em>. Macmillan Education UK.</li>
     <li>Weick, K. E. (1995). <em>Sensemaking in organizations</em>. Sage.</li>
@@ -778,35 +1477,35 @@ hr.section-rule {
   </ol>
 </section>
 
-<!-- FURTHER READING -->
+<!-- ============ FURTHER READING ============ -->
 <section id="further">
-  <p class="section-kicker">10 · Further reading</p>
+  <p class="section-kicker">11 · Further reading</p>
   <h2>External resources for the curious.</h2>
   <hr class="section-rule">
-
-  <h4>For students who want the canonical texts</h4>
+  <h4>Canonical change-management texts</h4>
   <ul>
-    <li><a href="https://hbr.org/2007/01/leading-change-why-transformation-efforts-fail">Kotter, J. P. (1995/2007). Leading change: Why transformation efforts fail. <em>Harvard Business Review.</em></a></li>
-    <li><a href="https://hbr.org/2000/05/cracking-the-code-of-change">Beer, M., &amp; Nohria, N. (2000). Cracking the code of change. <em>HBR.</em></a></li>
-    <li><a href="https://www.henley.ac.uk/research/research-centres/john-madejski-centre-for-reputation">Henley Business School — research centres</a></li>
+    <li><a href="https://hbr.org/2007/01/leading-change-why-transformation-efforts-fail">Kotter — Leading change: Why transformation efforts fail (HBR)</a></li>
+    <li><a href="https://hbr.org/2000/05/cracking-the-code-of-change">Beer &amp; Nohria — Cracking the code of change (HBR)</a></li>
+    <li><a href="https://www.tandfonline.com/doi/abs/10.1080/14697017.2011.630506">Hughes (2011) — Do 70 % of organisational change initiatives really fail?</a></li>
+    <li><a href="https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/the-state-of-organizations-2023">McKinsey — State of Organizations 2023</a></li>
   </ul>
 
-  <h4>For fashion-industry context</h4>
+  <h4>Fashion-industry context</h4>
   <ul>
-    <li><a href="https://www.businessoffashion.com/reports/news-analysis/the-state-of-fashion-2025-mckinsey-bof-report-pdf-download/">McKinsey &amp; BoF — State of Fashion 2025</a></li>
+    <li><a href="https://www.mckinsey.com/industries/retail/our-insights/state-of-fashion-2025">McKinsey &amp; BoF — State of Fashion 2025</a></li>
     <li><a href="https://commission.europa.eu/strategy-and-policy/policies/european-green-deal_en">EU Green Deal — official</a></li>
     <li><a href="https://environment.ec.europa.eu/strategy/textiles-strategy_en">EU Strategy for Sustainable and Circular Textiles</a></li>
     <li><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1781">Ecodesign for Sustainable Products Regulation (ESPR, 2024)</a></li>
   </ul>
 
-  <h4>For the V. Fraas region and heritage textile context</h4>
+  <h4>V. Fraas region and heritage textile context</h4>
   <ul>
     <li><a href="https://www.fraas.com/">V. Fraas GmbH — corporate site</a></li>
     <li><a href="https://www.gesamttextil.de/">Gesamtverband textil+mode — German textile and fashion industry association</a></li>
     <li><a href="https://www.idw.de/">Institut der Wirtschaftsprüfer — IDW Standards (S 6, S 11)</a></li>
   </ul>
 
-  <h4>For the doctoral research context</h4>
+  <h4>Doctoral research context</h4>
   <ul>
     <li><a href="https://www.henley.ac.uk/study/dba">Henley Business School — DBA programme</a></li>
     <li><a href="https://www.reading.ac.uk/">University of Reading</a></li>
@@ -816,14 +1515,64 @@ hr.section-rule {
 </div>
 </main>
 
+<a href="#" class="back-to-top" id="back-top" aria-label="Back to top">↑</a>
+
 <footer>
   <div class="container">
     <h3>Dr. Christian Neusser, DBA, MBA, MSc</h3>
     <p><a href="mailto:christian.neusser@me.com">christian.neusser@me.com</a> · <a href="https://www.christian-neusser.de">www.christian-neusser.de</a></p>
     <p>Henley Business School / University of Reading · Probevorlesung TEXOVERSUM 2026</p>
-    <p class="legal">Companion to the Probevorlesung delivered on 7 May 2026. The MSTM model is part of an unpublished doctoral thesis (Neusser, 2026); citations should reference the thesis until peer-reviewed publication. External links open in the same tab; all links accessed April 2026.</p>
+    <p class="legal">Companion to the Probevorlesung delivered on 7 May 2026. The MSTM framework is part of an unpublished doctoral thesis (Neusser, 2026); citations should reference the thesis until peer-reviewed publication. Figures from the thesis are reproduced here with author permission. External links open in the same tab; all links accessed April 2026. © 2026 Christian Neusser.</p>
   </div>
 </footer>
+
+<script>
+// ============ ACCORDION ============
+document.querySelectorAll('.acc-head').forEach(h => {
+  h.addEventListener('click', () => h.parentElement.classList.toggle('open'));
+});
+
+// ============ PHASE SLIDER ============
+document.querySelectorAll('#phase-slider .phase-tab').forEach(t => {
+  t.addEventListener('click', () => {
+    const phase = t.dataset.phase;
+    document.querySelectorAll('#phase-slider .phase-tab').forEach(x => x.classList.toggle('active', x.dataset.phase === phase));
+    document.querySelectorAll('#phase-slider .phase-panel').forEach(x => x.classList.toggle('active', x.dataset.phase === phase));
+  });
+});
+
+// ============ EXAMPLES FILTER ============
+document.querySelectorAll('#ex-filter .filter-chip').forEach(c => {
+  c.addEventListener('click', () => {
+    const lens = c.dataset.lens;
+    document.querySelectorAll('#ex-filter .filter-chip').forEach(x => x.classList.toggle('active', x === c));
+    document.querySelectorAll('#ex-table tbody tr').forEach(row => {
+      const lenses = (row.dataset.lens || '').split(' ');
+      row.classList.toggle('hidden-row', lens !== 'all' && !lenses.includes(lens));
+    });
+  });
+});
+
+// ============ ACTIVE NAV HIGHLIGHT (IntersectionObserver) ============
+const navLinks = document.querySelectorAll('nav.toc a');
+const sections = Array.from(navLinks).map(a => document.querySelector(a.getAttribute('href')));
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(en => {
+    if (en.isIntersecting) {
+      const id = en.target.id;
+      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+    }
+  });
+}, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
+sections.forEach(s => s && obs.observe(s));
+
+// ============ BACK TO TOP ============
+const back = document.getElementById('back-top');
+back.addEventListener('click', (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+window.addEventListener('scroll', () => {
+  back.classList.toggle('visible', window.scrollY > 600);
+});
+</script>
 
 </body>
 </html>
